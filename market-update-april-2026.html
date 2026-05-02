@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monthly Market Update — April 2026 | Ankur Kapur</title>
+  <meta name="description" content="A plain-English overview of global and Indian markets in April 2026 — covering equities, macro policy, commodities, and currencies." />
+  <style>
+    /* ── Reset & base ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:        #1a1a2e;
+      --muted:      #5a5a72;
+      --accent:     #2563eb;
+      --accent-lt:  #eff6ff;
+      --green:      #16a34a;
+      --green-lt:   #f0fdf4;
+      --red:        #dc2626;
+      --red-lt:     #fef2f2;
+      --amber:      #d97706;
+      --amber-lt:   #fffbeb;
+      --border:     #e5e7eb;
+      --card-bg:    #ffffff;
+      --page-bg:    #f8fafc;
+      --max-w:      780px;
+      --radius:     10px;
+      --font:       'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--page-bg);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── Layout ───────────────────────────────────── */
+    .page-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    /* ── Hero ─────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      color: #fff;
+      padding: 56px 32px 48px;
+      margin-bottom: 40px;
+    }
+    .hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .hero-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #93c5fd;
+      margin-bottom: 10px;
+    }
+    .hero h1 {
+      font-size: clamp(26px, 5vw, 40px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .hero-sub {
+      color: #cbd5e1;
+      font-size: 16px;
+      max-width: 560px;
+    }
+    .hero-meta {
+      margin-top: 24px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-meta span {
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .hero-meta strong { color: #e2e8f0; }
+
+    /* ── Divider ──────────────────────────────────── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 36px 0;
+    }
+
+    /* ── Section heading ──────────────────────────── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 24px 0 8px;
+      color: var(--ink);
+    }
+    p { margin-bottom: 14px; color: #374151; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Stat cards row ───────────────────────────── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 14px;
+      margin: 20px 0 28px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .stat-card .label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .stat-card .value {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+    .stat-card .change {
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .up   { color: var(--green); }
+    .down { color: var(--red);   }
+    .flat { color: var(--amber); }
+
+    /* ── Callout box ──────────────────────────────── */
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: var(--accent-lt);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 15px;
+      color: #1e3a5f;
+    }
+    .callout.green  { border-color: var(--green); background: var(--green-lt); color: #14532d; }
+    .callout.amber  { border-color: var(--amber); background: var(--amber-lt); color: #78350f; }
+    .callout strong { font-weight: 700; }
+
+    /* ── Tag pills ────────────────────────────────── */
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 20px; }
+    .tag {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--muted);
+    }
+
+    /* ── Section card ─────────────────────────────── */
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 28px 24px;
+      margin-bottom: 28px;
+    }
+
+    /* ── Summary table ────────────────────────────── */
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+    .summary-table th {
+      text-align: left;
+      padding: 8px 12px;
+      background: #f1f5f9;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid var(--border);
+    }
+    .summary-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      color: #374151;
+    }
+    .summary-table tr:last-child td { border-bottom: none; }
+    .summary-table td:last-child { font-weight: 700; }
+
+    /* ── Key takeaway box ─────────────────────────── */
+    .takeaway {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-top: 24px;
+    }
+    .takeaway-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .takeaway p { font-size: 15px; color: #374151; }
+
+    /* ── Footer ───────────────────────────────────── */
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Responsive ───────────────────────────────── */
+    @media (max-width: 540px) {
+      .hero { padding: 40px 20px 36px; }
+      .section-card { padding: 20px 16px; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ HERO ═══ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Monthly Market Update</div>
+    <h1>April 2026:<br>Markets Rebound on AI Optimism</h1>
+    <p class="hero-sub">A plain-English look at what happened across global and Indian markets in April — what moved, why it matters, and what to keep an eye on next.</p>
+    <div class="hero-meta">
+      <span><strong>Period covered:</strong> April 1–30, 2026</span>
+      <span><strong>Published:</strong> May 2, 2026</span>
+      <span><strong>By:</strong> Ankur Kapur · ankurkapur.com</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ BODY ═══ -->
+<div class="page-wrap">
+
+  <!-- ── At a Glance ── -->
+  <div class="section-label">Overview</div>
+  <h2 class="section-title">The Month at a Glance</h2>
+  <p>April 2026 was a strong month for equities globally. A combination of solid corporate earnings, cooling trade war concerns, and renewed enthusiasm around artificial intelligence drove markets higher — with US indices posting their best monthly gains in several years. Indian markets also climbed meaningfully, though global headwinds from the West Asia conflict kept some caution in the air.</p>
+
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>Index / Asset</th>
+        <th>Level (Apr 30)</th>
+        <th>April Return</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Nifty 50 (India)</td>
+        <td>23,998</td>
+        <td class="up">▲ +6.4%</td>
+      </tr>
+      <tr>
+        <td>Sensex (India)</td>
+        <td>76,914</td>
+        <td class="up">▲ +5.2%</td>
+      </tr>
+      <tr>
+        <td>S&amp;P 500 (US)</td>
+        <td>7,230</td>
+        <td class="up">▲ +10.4%</td>
+      </tr>
+      <tr>
+        <td>Nasdaq Composite</td>
+        <td>25,114</td>
+        <td class="up">▲ +15.3%</td>
+      </tr>
+      <tr>
+        <td>Dow Jones</td>
+        <td>—</td>
+        <td class="up">▲ +7.1%</td>
+      </tr>
+      <tr>
+        <td>Gold (USD/oz)</td>
+        <td>~$4,702</td>
+        <td class="flat">Mixed</td>
+      </tr>
+      <tr>
+        <td>Brent Crude (USD/bbl)</td>
+        <td>~$101</td>
+        <td class="flat">Elevated</td>
+      </tr>
+      <tr>
+        <td>USD / INR</td>
+        <td>~₹95.2</td>
+        <td class="down">Rupee weaker</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="divider"></div>
+
+  <!-- ── Section 1: Indian Equities ── -->
+  <div class="section-card">
+    <div class="section-label">Section 1</div>
+    <h2 class="section-title">Indian Equities — A Solid April</h2>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="label">Nifty 50</div>
+        <div class="value">23,998</div>
+        <div class="change up">▲ +6.4% in April</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Sensex</div>
+        <div class="value">76,914</div>
+        <div class="change up">▲ +5.2% in April</div>
+      </div>
+    </div>
+
+    <p>After a few months of choppiness, Indian equities staged a meaningful recovery in April. The Nifty 50 rose roughly 6.4% and the Sensex gained about 5.2% over the month — broad-based gains with buying spread across most sectoral indices.</p>
+
+    <h3>What drove the rally?</h3>
+    <p>Several things lined up in India's favour this month. First, the RBI's decision to hold rates (more on that in the Macro section) gave markets confidence that borrowing costs aren't going higher. Second, foreign institutional investors (FIIs) returned to buying after months of outflows. Third, strong quarterly earnings from several large-cap companies across banking, IT, and consumer sectors gave investors reason to feel optimistic about India's growth story.</p>
+
+    <div class="callout green">
+      <strong>Good sign:</strong> The recovery was broad-based — not just driven by a handful of large stocks. Mid-cap and small-cap indices also participated, which is typically a healthier sign for the overall market.
+    </div>
+
+    <h3>Any concerns?</h3>
+    <p>The last few days of April saw the Nifty give back some gains — down about 0.74% on April 30 alone. The primary culprit was global risk-off sentiment after the US Federal Reserve signalled it was not in a hurry to cut rates, and rising oil prices (linked to the West Asia conflict) kept inflation worries alive.</p>
+
+    <div class="takeaway">
+      <div class="takeaway-title">What this means for you</div>
+      <p>If you invest in Indian equities through mutual funds or direct stocks, April was likely a good month for your portfolio. The broader recovery suggests India's fundamentals remain intact. That said, global factors — especially oil prices and US monetary policy — can quickly change the mood, so staying diversified remains wise.</p>
+    </div>
+  </div>
+
+  <!-- ── Section 2: Global Equities ── -->
+  <div class="section-card">
+    <div class="section-label">Section 2</div>
+    <h2 class="section-title">Global Equities — US Markets Roar Back</h2>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="label">S&amp;P 500</div>
+        <div class="value">7,230</div>
+        <div class="change up">▲ +10.4% in April</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Nasdaq</div>
+        <div class="value">25,114</div>
+        <div class="change up">▲ +15.3% in April</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Dow Jones</div>
+        <div class="value">—</div>
+        <div class="change up">▲ +7.1% in April</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Nikkei 225</div>
+        <div class="value">59,513</div>
+        <div class="change up">▲ Higher</div>
+      </div>
+    </div>
+
+    <p>April 2026 will go down as a remarkable month for US equity markets. The S&amp;P 500 gained 10.4% — its best monthly performance since November 2020. The Nasdaq was even more impressive, surging 15.3%, its strongest month since April 2020. The Dow Jones added 7.1%.</p>
+
+    <h3>The AI wave continues</h3>
+    <p>The single biggest driver of US market strength is the artificial intelligence investment boom. The largest technology and cloud companies announced plans to spend an estimated <strong>$670 billion</strong> in 2026 on AI infrastructure — data centres, chips, and software. Analysts expect AI-related spending to drive roughly 40% of S&amp;P 500 earnings growth this year. That's a staggering number, and it's why tech-heavy indices like the Nasdaq are outperforming everything else.</p>
+
+    <div class="callout">
+      <strong>Plain English:</strong> AI is not just a trend — it has become the dominant engine of corporate profit growth in America. Companies building and selling AI tools are seeing revenues surge, and this is lifting the entire US stock market.
+    </div>
+
+    <h3>Japan and Australia join the party</h3>
+    <p>Global markets broadly followed the US higher. Japan's Nikkei 225 climbed to 59,513, while Australia's S&amp;P/ASX 200 rose to 8,729. European markets were more mixed — the UK's FTSE 100 had a volatile month, reflecting concerns about the ongoing conflict in West Asia and its impact on energy prices.</p>
+
+    <div class="takeaway">
+      <div class="takeaway-title">What this means for you</div>
+      <p>If you hold US index funds or global equity funds, April was an excellent month. The AI-driven rally is real and may continue if earnings keep delivering. However, the S&amp;P 500 is still down about 4% for the full year 2026, so the longer-term picture is more nuanced — global uncertainty has taken a toll even as individual months look strong.</p>
+    </div>
+  </div>
+
+  <!-- ── Section 3: Macro ── -->
+  <div class="section-card">
+    <div class="section-label">Section 3</div>
+    <h2 class="section-title">Macro &amp; Economy — Steady at the Helm</h2>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="label">RBI Repo Rate</div>
+        <div class="value">5.25%</div>
+        <div class="change flat">Held unchanged</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">India GDP (FY27 proj.)</div>
+        <div class="value">6.9%</div>
+        <div class="change flat">ADB estimate</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">India CPI (FY27 proj.)</div>
+        <div class="value">4.6%</div>
+        <div class="change flat">RBI forecast</div>
+      </div>
+    </div>
+
+    <h3>RBI holds rates — what does that mean?</h3>
+    <p>The Reserve Bank of India's Monetary Policy Committee (MPC) met in April and decided to keep the <strong>repo rate — the interest rate at which the RBI lends money to banks — unchanged at 5.25%</strong>. The MPC also kept its "neutral" stance, meaning it's neither actively trying to boost the economy nor cool it down.</p>
+
+    <p>Why does this matter to you? The repo rate is the anchor for almost all borrowing costs in India. When it stays flat, home loan EMIs, car loan rates, and business borrowing costs remain stable. This is broadly positive for consumers and companies.</p>
+
+    <div class="callout">
+      <strong>Think of it this way:</strong> The RBI is essentially saying, "The economy is on a stable path — we don't need to pump the accelerator or hit the brakes right now." That kind of calm confidence is usually welcomed by markets.
+    </div>
+
+    <h3>India's growth remains among the world's fastest</h3>
+    <p>The Asian Development Bank (ADB) projects India's GDP growth at <strong>6.9% for FY2026–27</strong>, after a strong 7.6% in FY2025–26. India's growth story is being powered by rising private consumption (people spending more), government infrastructure investment, and improving GST revenues. The World Bank's South Asia Economic Update also highlighted India's resilience, though it noted that the West Asia conflict is a headwind through higher energy prices.</p>
+
+    <h3>The US Fed stays put — for now</h3>
+    <p>On the global side, the US Federal Reserve kept its benchmark interest rate unchanged in April. With the Iran conflict pushing oil prices higher and keeping inflation risks elevated, markets have largely priced out any interest rate cuts from the Fed in 2026. This is significant because higher US rates tend to attract money away from emerging markets like India (as investors seek safer returns in the US), which puts pressure on the Indian rupee.</p>
+
+    <div class="takeaway">
+      <div class="takeaway-title">What this means for you</div>
+      <p>Your home loan EMI is unlikely to change in the near term — the RBI is in a hold mode. India's economy continues to grow well, though at a slightly more moderate pace than last year. The biggest external risk remains energy prices — if oil stays elevated, it feeds into inflation and could eventually force the RBI's hand.</p>
+    </div>
+  </div>
+
+  <!-- ── Section 4: Commodities & FX ── -->
+  <div class="section-card">
+    <div class="section-label">Section 4</div>
+    <h2 class="section-title">Commodities &amp; Currencies — Gold Shines, Oil Stays High</h2>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="label">Gold (USD/oz)</div>
+        <div class="value">$4,702</div>
+        <div class="change up">Near all-time highs</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Gold (INR/gram)</div>
+        <div class="value">₹13,966</div>
+        <div class="change up">Elevated</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Brent Crude</div>
+        <div class="value">~$101</div>
+        <div class="change down">Above $100/bbl</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">USD / INR</div>
+        <div class="value">₹95.2</div>
+        <div class="change down">Rupee weaker</div>
+      </div>
+    </div>
+
+    <h3>Gold at record territory</h3>
+    <p>Gold continues its remarkable run, trading at approximately <strong>$4,702 per ounce</strong> as of late April — a price level that would have seemed extraordinary just a couple of years ago. In Indian rupee terms, gold is at around ₹13,966 per gram, which means holding gold has been an excellent decision for Indian savers who bought it earlier.</p>
+
+    <p>Gold typically rises when investors are worried — about inflation, geopolitical conflict, or currency weakness. All three of those factors are present right now: the West Asia conflict, sticky inflation in the US, and a broadly weaker US dollar have all combined to push gold higher. However, the World Gold Council notes that prices are down almost 15% since the beginning of the conflict — a reminder that gold can also be volatile and is influenced by many competing forces.</p>
+
+    <div class="callout amber">
+      <strong>Worth knowing:</strong> At these price levels, buying gold may feel uncomfortable. If you're investing in gold for the long term (as a small hedge or "insurance" in your portfolio), systematic purchasing (like a monthly SIP in gold ETFs or sovereign gold bonds) is often a smarter approach than trying to time the market.
+    </div>
+
+    <h3>Oil crosses $100 per barrel</h3>
+    <p>Brent crude oil touched <strong>$100.99 per barrel</strong> in April — a psychologically significant level. The primary driver is the West Asia conflict, which has disrupted energy supply routes and kept producers cautious about increasing output. For India, which imports roughly 85% of its oil needs, expensive oil is a double burden: it widens the import bill (hurting the current account deficit) and pushes up domestic fuel prices, which filter through to inflation.</p>
+
+    <h3>The rupee under pressure</h3>
+    <p>The Indian rupee weakened against the US dollar in April, ending the month at around <strong>₹95.2 per dollar</strong>. A weaker rupee makes imports more expensive (worsening the oil price pain) but can benefit exporters — particularly IT companies that earn in dollars and report in rupees. For ordinary consumers, a weaker rupee often means higher prices for imported goods over time.</p>
+
+    <div class="takeaway">
+      <div class="takeaway-title">What this means for you</div>
+      <p>If you own gold, your portfolio has had a great run. If you're planning international travel or sending money abroad, the weaker rupee means your costs are higher. And if you drive or cook with LPG, keep an eye on fuel price notifications — sustained high oil prices eventually feed through to domestic prices.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── What to Watch ── -->
+  <div class="section-label">Looking Ahead</div>
+  <h2 class="section-title">What to Watch in May 2026</h2>
+
+  <div class="tag-row">
+    <span class="tag">RBI Policy</span>
+    <span class="tag">US Fed Signals</span>
+    <span class="tag">Q4 FY26 Earnings</span>
+    <span class="tag">Oil Prices</span>
+    <span class="tag">West Asia Conflict</span>
+    <span class="tag">AI Spending Reports</span>
+  </div>
+
+  <p>As we head into May, a few things are worth keeping on your radar:</p>
+
+  <p><strong>Indian corporate earnings season:</strong> Q4 FY2025–26 results will continue to roll in through May. Pay attention to sectors like banking (loan growth and asset quality), IT (deal wins and guidance), and consumer goods (demand trends in rural vs. urban markets).</p>
+
+  <p><strong>RBI's next move:</strong> With inflation projected to stay around 4.6% and growth at 6.9%, the RBI is unlikely to cut rates soon. But if oil prices come off and inflation eases, there could be scope for a cut in the second half of the year.</p>
+
+  <p><strong>Global AI earnings:</strong> Major US technology companies will report results and give forward guidance on AI investment spending. These numbers will set the tone for whether the Nasdaq's April rally has legs or not.</p>
+
+  <p><strong>West Asia conflict:</strong> This remains the single biggest wildcard. An escalation could spike oil further and rattle global markets, while any ceasefire or de-escalation could quickly reverse recent commodity price moves.</p>
+
+
+</div><!-- end .page-wrap -->
+</body>
+</html>
